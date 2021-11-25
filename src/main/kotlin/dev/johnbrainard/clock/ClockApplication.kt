@@ -14,8 +14,12 @@ class ClockApplication(
 
 	fun currentClock(): Clock {
 		val now = OffsetDateTime.now(systemClock)
+
+		val hour = now.hour.mod(12)
+			.let { if (it == 0) 12 else it }
+
 		return Clock(
-			hour = String.format("%02d", now.hour.mod(12)),
+			hour = String.format("%02d", hour),
 			minute = String.format("%02d", now.minute),
 			second = String.format("%02d", now.second),
 			separatorOn = now.second.mod(2) == 0
