@@ -26,7 +26,7 @@ tasks.withType<KotlinCompile>() {
 
 compose.desktop {
 	application {
-		mainClass = "MainKt"
+		mainClass = "dev.johnbrainard.clock.ui.MainKt"
 		nativeDistributions {
 			targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
 			packageName = "ComposeDesktopTutorial"
